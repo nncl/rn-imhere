@@ -9,6 +9,10 @@ export function Home() {
     console.log(`hello world`);
   }
 
+  function handleParticipantRemove(name: string) {
+    console.log(`You have just removed the user ${name}`);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>
@@ -32,7 +36,7 @@ export function Home() {
       </View>
 
       {['John', 'Wick', 'World'].map(item => (
-        <Participant key={item} name={item}/>
+        <Participant key={item} name={item} onRemove={()=>handleParticipantRemove(item)}/>
       ))}
     </View>
   )
