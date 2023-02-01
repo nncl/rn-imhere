@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#1f1e25',
     borderRadius: 5,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 16,
   },
   name: {
     flex: 1,
@@ -25,6 +26,5 @@ export const styles = StyleSheet.create({
     backgroundColor: '#e23c44',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 16,
   },
 })
