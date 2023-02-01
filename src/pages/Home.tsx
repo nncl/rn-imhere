@@ -5,6 +5,8 @@ import {Participant} from '../components/Participant'
 import {styles} from "./styles";
 
 export function Home() {
+  const participants = ['John', 'Wick', 'World'];
+
   function handleParticipantAdd() {
     console.log(`hello world`);
   }
@@ -35,7 +37,7 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      {['John', 'Wick', 'World'].map(item => (
+      {participants.map(item => (
         <Participant key={item} name={item} onRemove={()=>handleParticipantRemove(item)}/>
       ))}
     </View>
