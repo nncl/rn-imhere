@@ -1,4 +1,4 @@
-import {Text, TextInput, View, TouchableOpacity, FlatList} from "react-native";
+import {Text, TextInput, View, TouchableOpacity, FlatList, Alert} from "react-native";
 
 import {Participant} from '../components/Participant'
 
@@ -8,11 +8,22 @@ export function Home() {
   const participants = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid"]
 
   function handleParticipantAdd() {
-    console.log(`hello world`);
+    if (participants.includes('Aaran')) {
+      return Alert.alert('Ops', 'This user already exists, try adding a new one!')
+    }
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(`You have just removed the user ${name}`);
+    Alert.alert('Are you sure?', `Are you you want to remove ${name} from the list?`, [
+      {
+        text: 'Cancel',
+        style: 'cancel'
+      },
+      {
+        text: 'Yes',
+        onPress:()=> Alert.alert('', `${name}'s been removed successfully!`)
+      }
+    ])
   }
 
   return (
