@@ -3,14 +3,17 @@ import {Text, TextInput, View, TouchableOpacity, FlatList, Alert} from "react-na
 import {Participant} from '../components/Participant'
 
 import {styles} from "./styles";
+import {useState} from "react";
 
 export function Home() {
-  const participants = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid"]
+  const [participants, setParticipants] = useState(["Anna"])
 
   function handleParticipantAdd() {
-    if (participants.includes('Aaran')) {
+    if (participants.includes('John')) {
       return Alert.alert('Ops', 'This user already exists, try adding a new one!')
     }
+
+    setParticipants(prevState => [...prevState, 'John']);
   }
 
   function handleParticipantRemove(name: string) {
