@@ -30,7 +30,11 @@ export function Home() {
       },
       {
         text: 'Yes',
-        onPress:()=> Alert.alert('', `${name}'s been removed successfully!`)
+        onPress:() => {
+          const filtered = participants.filter(item => item != name);
+          setParticipants(filtered);
+          Alert.alert('', `${name}'s been removed successfully!`)
+        }
       }
     ])
   }
